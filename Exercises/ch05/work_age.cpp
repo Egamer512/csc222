@@ -13,5 +13,6 @@ int main(){
     check_age(742);
     check_age(32);
     check_age(1);
+    return 0;
 }
 
