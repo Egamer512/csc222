@@ -118,7 +118,7 @@ Read a list of integer numbers from a text file. Each number in the file will be
     <tr>
         <td> 5325 </td>
         <td> 1</td>
-        <td> 43245</td>
+        <td> 432435</td>
     </tr>
 </table>
 
