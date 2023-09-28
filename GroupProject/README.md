@@ -1,4 +1,5 @@
-#Description
+
+# Description
 
 
 Read a list of integer numbers from a text file. Each number in the file will be separated with a space. Find the largest number in the list and how many times that number appears in the list.
@@ -11,7 +12,7 @@ Read a list of integer numbers from a text file. Each number in the file will be
 7. The judges will enter additional test data not provided below to further test your application.
 
 
-*** From Seminole State University: https://www.seminolestate.edu/computers/competition/samples/2016
-Class: CSC-222
-Solution by: Anfal and Anar 
+*From Seminole State University: https://www.seminolestate.edu/computers/competition/samples/2016*
+*Class: CSC-222*
+*Solution by: Anfal and Anar*
 
