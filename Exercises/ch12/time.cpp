@@ -6,7 +6,7 @@ struct Time {
     double second;
     void print();
     void increment(double secs);
-    Time time
+    Time(int h, int m, double s);
 };
 
 void Time::print()
@@ -15,21 +15,22 @@ void Time::print()
 }
 
 void Time::increment(double secs){
-    Time time = *this;
     second += secs;
-    if(second < 60.0){
-        time.print();
-    }else{
-        if(second >= 60.0){
-            minute++;
-            second-=60.0;
-        }
-        if(minute > 60){
-            minute -= 60;
-            hour++;
-        }
-     increment(second);
+
+    if(second >= 60){
+       int  temp = int(second/60);
+        minute += temp;
+        second -= 60*temp;
     }
+
+    if(minute >= 60){
+        int temp = int(minute/60);
+        hour += temp;
+        minute -= 60*temp;
+    }
+
+
+
 
 }
 Time::Time(int h, int m, double s)
@@ -40,5 +41,5 @@ Time::Time(int h, int m, double s)
 int main(){
     Time current_time = {9, 13, 30.0};
     current_time.increment(500.0);
-    return 0;
-}
+    current_time.print();
+    return 0;}       
