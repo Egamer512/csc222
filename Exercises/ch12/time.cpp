@@ -1,17 +1,19 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct Time {
     int hour, minute;
     double second;
-    void print();
+    string to_string();
     void increment(double secs);
     Time(int h, int m, double s);
 };
 
-void Time::print()
+string Time::to_string()
 {
-    cout << hour << ":" << minute << ":" << second << endl;
+    string frac = "The time is " + hour + ":" + minute + ":" + second;
+    return frac;
 }
 
 void Time::increment(double secs){
@@ -41,5 +43,5 @@ Time::Time(int h, int m, double s)
 int main(){
     Time current_time = {9, 13, 30.0};
     current_time.increment(500.0);
-    current_time.print();
+    cout << current_time.to_string << endl;
     return 0;}       
