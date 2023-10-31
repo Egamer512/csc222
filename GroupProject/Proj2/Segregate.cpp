@@ -7,18 +7,19 @@ class Solution{
     void segregateElements(int arr[],int n)
     {
         int size = n;
+        int i = 0;
+        int j = n-1;
         int *a = arr;
-        for(int i = 0; i < size; i++){
-            if(*(a+i) < 0){
-                int temp = *(a+i);
-                for(int j = i; j < n-1; j++){
-                    *(a+j) = *(a+j+1);
-                }
-                *(a+n-1) = temp;
-                size--;
-                i--;
-            }
+        while(i!=j){
+        if(*(a+i) < 0){
+            int temp = *(a+i);
+            *(a+i) = *(a+j);
+            *(a+j) = temp;  
+            j--;    
         }
+        i++;
+ }
+
         // Your code goes here
     }
 };
