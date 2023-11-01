@@ -2,8 +2,6 @@
 using namespace std;
 
 // } Driver Code Ends
-class Solution{
-    public:
     void segregateElements(int arr[],int n)
     {
         int size = n;
@@ -11,6 +9,9 @@ class Solution{
         int j = n-1;
         int *a = arr;
         while(i!=j){
+            if(*(a+j) <0){
+                j--;
+            }
         if(*(a+i) < 0){
             int temp = *(a+i);
             *(a+i) = *(a+j);
@@ -22,7 +23,6 @@ class Solution{
 
         // Your code goes here
     }
-};
 
 //{ Driver Code Starts.
 int main() {
@@ -36,8 +36,7 @@ int main() {
 		int a[n];
 		for(int i=0;i<n;i++)
 		cin>>a[i];
-		Solution ob;
-		ob.segregateElements(a,n);
+		segregateElements(a,n);
 		
         for(int i=0;i<n;i++)
         cout<<a[i]<<" ";
