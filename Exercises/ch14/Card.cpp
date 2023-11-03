@@ -17,12 +17,12 @@ struct Card {
     bool is_greater(const Card& other_card) const;
 };
 
-Card::Card (){
-    suit = 0;
-    rank = 0;
-}
+Card::Card(){
+    suit = CLUBS;
+    rank = ACE;
+}       
 
-Card::Card(int s, int r){
+Card::Card(Suit s, Rank r){
     suit = s;
     rank = r;
 }
@@ -61,8 +61,8 @@ void print_deck(const vector<Card>& deck){
 vector<Card> create_deck(){
     vector<Card> deck(52);
     int i = 0; // this is to go to every "holder" of the vector
-    for(int suit = CLUBS; suit <=SPADES; suit = Suit(suit+1){
-        for(int rank = ACE; rank < KING; Rank(rank+1){
+    for(int suit = CLUBS; suit <=SPADES; suit = Suit(suit+1)){
+        for(int rank = ACE; rank <= KING; Rank(rank+1)){
             deck[i].suit = suit;
             deck[i].rank = rank;
             i++;
@@ -72,8 +72,8 @@ vector<Card> create_deck(){
 }
 
 int main(){
-
-
+    
+    
     return 0;
 
 }
