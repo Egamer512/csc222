@@ -3,12 +3,15 @@
 #include <vector>
 using namespace std;
 
+enum Suit {CLUBS, DIAMONDS, HEARTS, SPADES};
+enum Rank {ACE=1, TWO, THREE, FOUR, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING};
+
 
 struct Card {
     int suit, rank;
 
     Card();
-    Card(int s, int r);
+    Card(Suit s, Rank r);
     string to_string() const;
     bool equals(const Card& other_card) const;
     bool is_greater(const Card& other_card) const;
@@ -58,8 +61,8 @@ void print_deck(const vector<Card>& deck){
 vector<Card> create_deck(){
     vector<Card> deck(52);
     int i = 0; // this is to go to every "holder" of the vector
-    for(int suit = 0; suit <=3; suit++){
-        for(int rank = 1; rank < 13; rank++){
+    for(int suit = CLUBS; suit <=SPADES; suit = Suit(suit+1){
+        for(int rank = ACE; rank < KING; Rank(rank+1){
             deck[i].suit = suit;
             deck[i].rank = rank;
             i++;
@@ -70,11 +73,6 @@ vector<Card> create_deck(){
 
 int main(){
 
-    Card card(1,11);
-    cout << card.to_string() << endl;
-    vector<Card> deck = create_deck();
-
-    print_deck(deck);
 
     return 0;
 
