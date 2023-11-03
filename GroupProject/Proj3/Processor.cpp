@@ -23,7 +23,7 @@ Processor::Processor(int cc, int tc, double cs, int p, string b, string g){
 }
 
 string Processor::to_string(){
-    return brand + " " + gen + " with the specs of: ";
+    return brand + " " + gen;
 }
 
 bool Processor::equals(Processor other_processor) const {
