@@ -8,7 +8,8 @@ struct Processor {
     string gen;
 
     Processor();
-    
+    Processor(string b, string g);
+
     string to_string();
 };
 

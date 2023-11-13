@@ -9,6 +9,11 @@ Processor::Processor() {
     gen = "5th gen";
 }
 
+Processor::Processor(string b, string g){
+    brand = b;
+    gen = g;
+    }
+
 string Processor::to_string() {
     return brand + " " + gen;
 }
