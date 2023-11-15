@@ -18,3 +18,4 @@ string Processor::to_string() {
     return brand + " " + gen;
 }
 
+int Processor::ALU()
