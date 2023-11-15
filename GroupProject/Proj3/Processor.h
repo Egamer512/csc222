@@ -11,8 +11,7 @@ struct Processor {
     Processor();
     Processor(string b, string g);
     
-    bitset<19> ALU(bitset<8>& bit1, bitset<8>& bit2);
-    bool fullAdder(bool bit1, bool bit2, bool& carry);
+    bitset<8> XOR(bitset<8> byte1, bitset<8> byte2);
     string to_string();
 };
 

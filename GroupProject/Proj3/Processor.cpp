@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
+#include <bitset>
 #include "Processor.h"
 
 using namespace std;
 
 Processor::Processor() {
-    brand = "intel";
-    gen = "5th gen";
+    brand = "Intel";
+    gen = "i5-5200U";
 }
 
 Processor::Processor(string b, string g){
@@ -18,4 +19,6 @@ string Processor::to_string() {
     return brand + " " + gen;
 }
 
-int Processor::ALU()
+bitset<8> Processor::XOR(bitset<8> byte1, bitset<8> byte2){
+    return byte1 ^ byte2;
+}  
