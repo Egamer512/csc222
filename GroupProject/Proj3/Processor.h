@@ -18,6 +18,6 @@ struct Processor {
     void XOR(bitset<8> b);
     void AND(bitset<8> b);
 
-    void add(bitset<8> byte1, bitset<8> byte2);
+    void add(bitset<8> b);
 };
 

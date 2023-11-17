@@ -28,16 +28,19 @@ void Processor::AND(bitset<8> b){
     mem = mem & b;
 }
 
-void add(bitset<8> b){
+
+void Processor::add(bitset<8> b){
     bitset<8> added_mem;
     bool carry = false;
     for(int i = 0; i < 8; i++){
-        added_mem = mem ^ b ^ carry;
-        carry = mem[i] & b[i] | mem[i] ^ b[i] & carry;
+        added_mem = mem[i] != b[i] != carry;
+        carry = mem[i] && b[i] || mem[i] !=  b[i] && carry;
     }
     // if there is an overflow --> too bad i guess
     if(carry){
         mem = bitset<8>();
-    }
+    }else{
+        mem = added_mem;
+    }   
 }
 

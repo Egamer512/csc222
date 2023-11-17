@@ -17,5 +17,5 @@ TEST_CASE("Test the to_string of the struct with constructor ") {
 TEST_CASE("Test the XOR function"){
     Processor intel5;
     intel5.XOR(bitset<8>("11101001"));
-    CHECK(intel5.to_string() == "Intel i5-5200U with 01000101 bits");
+    CHECK(intel5.to_string() == "Intel i5-5200U with 01000011 bits");
 }
