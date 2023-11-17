@@ -33,7 +33,7 @@ void Processor::add(bitset<8> b){
     bitset<8> added_mem;
     bool carry = false;
     for(int i = 0; i < 8; i++){
-        added_mem = mem[i] != b[i] != carry;
+        added_mem[i] = mem[i] != b[i] != carry;
         carry = mem[i] && b[i] || mem[i] !=  b[i] && carry;
     }
     // if there is an overflow --> too bad i guess
