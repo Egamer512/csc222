@@ -7,11 +7,17 @@ using namespace std;
 struct Processor {
     string brand;
     string gen;
+    bitset<8> mem;
+
 
     Processor();
-    Processor(string b, string g);
+    Processor(string b, string g, string m);
     
-    bitset<8> XOR(bitset<8> byte1, bitset<8> byte2);
+         
     string to_string();
+    void XOR(bitset<8> b);
+    void AND(bitset<8> b);
+
+    void add(bitset<8> byte1, bitset<8> byte2);
 };
 
