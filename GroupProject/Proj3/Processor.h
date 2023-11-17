@@ -1,3 +1,10 @@
+/*
+Names: Anfal and Dane
+Date: November 17, 2023
+Class: CSC 222
+  */
+
+
 #include <iostream>
 #include <string>
 #include <bitset>
