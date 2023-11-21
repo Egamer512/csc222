@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 
@@ -10,6 +11,9 @@ struct Card{
 
     Rank rank;
     Suit suit;
-    
+
     Card(Suit s, Rank r);
+    string to_string() const;
+    bool equals(const Card& other_card) const;
+    bool is_greater(const Card& other_card) const;
 };
