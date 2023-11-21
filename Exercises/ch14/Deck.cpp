@@ -4,7 +4,18 @@ struct Deck{
     Deck(int n);
 
     void print();
+    int find_card(const Card& card);
 };
+
+int Deck::find_card(const Card& card){
+
+    for(int i = 0; i < cards.size(); i++){
+        if(eq(card, cards[i]){
+                return i;
+        }
+    }
+    return -1;
+}
 
 Deck::Deck(){
     vector<Card> copy_deck(52);
