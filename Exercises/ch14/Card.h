@@ -12,8 +12,17 @@ struct Card{
     Rank rank;
     Suit suit;
 
-    Card(Suit s, Rank r);
+    Card(Suit, Rank);
     string to_string() const;
-    bool equals(const Card& other_card) const;
-    bool is_greater(const Card& other_card) const;
+    bool equals(const Card&) const;
+    bool is_greater(const Card&) const;
+};
+
+struct Deck{
+    vector<Card> cards;
+    Deck();
+    Deck(int n);
+
+    void print();
+    int find_card(const Card& card);
 };

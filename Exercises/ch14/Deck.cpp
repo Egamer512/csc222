@@ -1,11 +1,4 @@
-struct Deck{
-    vector<Card> cards;
-    Deck();
-    Deck(int n);
 
-    void print();
-    int find_card(const Card& card);
-};
 
 int Deck::find_card(const Card& card){
 
