@@ -27,5 +27,6 @@ struct Deck{
     int find_card(const Card& card);
     void selection_sort();
     void swap_cards(int l, int h);
+    Deck Deck::subdeck(int l, int h);
     
 };

@@ -107,6 +107,14 @@ void Deck::swap_cards(int l, int h){
     cards[h] = temp;
     }
 
+Deck Deck::subdeck(int l, int h) const
+{
+    Deck sub(h-l+1);
 
+    for (int i = 0; i < sub.cards.size(); i++) {
+        sub.cards[i] = cards[l+i];
+    }
+    return sub;
+}
 
 
