@@ -1,11 +1,13 @@
 #include <iostream>
-#include <random>
 
 using namespace std;
 
-struct card_random{
+struct random{
+    int left;
+    int right;
 
-    int random_between(int l, int h);
-}
+    random(int l, int r);
+    int random_between();
+};
 
 
