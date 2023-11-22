@@ -77,7 +77,7 @@ Deck::Deck(int s){
     cards = copy_over_deck;
 }
 
-int Deck:find_lowest(int l, int h){
+int Deck::find_lowest(int l, int h){
     Card lowest = cards[l];
     int low_index = l;
     for(int i = l+1; i < h; i++){
@@ -88,7 +88,7 @@ int Deck:find_lowest(int l, int h){
     return low_index;
 }
 
-void Deck:selection_sort(){
+void Deck::selection_sort(){
     for(int i =0; i < cards.size(); i++){
         for(int j = i + 1; j < cards.size() - 1; j++){
             if(cards[i].is_greater(cards[j]){
@@ -99,6 +99,12 @@ void Deck:selection_sort(){
                 }
             }
         }
+    }
+
+void Deck::swap_cards(int l, int h){
+    temp = cards[l];
+    cards[l] = cards[h];
+    cards[h] = temp;
     }
 
 
