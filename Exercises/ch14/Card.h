@@ -25,4 +25,6 @@ struct Deck{
 
     void print();
     int find_card(const Card& card);
+    void selection_sort();
+    
 };

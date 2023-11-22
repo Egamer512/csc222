@@ -87,3 +87,20 @@ int Deck:find_lowest(int l, int h){
     }
     return low_index;
 }
+
+void Deck:selection_sort(){
+    for(int i =0; i < cards.size(); i++){
+        for(int j = i + 1; j < cards.size() - 1; j++){
+            if(cards[i].is_greater(cards[j]){
+                Card temp = cards[i];
+                cards[i] = cards[j];
+                cards[j] = temp;
+                break;
+                }
+            }
+        }
+    }
+
+
+
+
