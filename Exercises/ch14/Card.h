@@ -28,5 +28,7 @@ struct Deck{
     void selection_sort();
     void swap_cards(int l, int h);
     Deck Deck::subdeck(int l, int h);
-    
+    Card remove_card();
+   void add_card(const Card& c);
+
 };

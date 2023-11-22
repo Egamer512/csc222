@@ -117,4 +117,21 @@ Deck Deck::subdeck(int l, int h) const
     return sub;
 }
 
+void Deck::add_card(const Card& c)
+{
+    cards.push_back(c);
+}
 
+Card Deck::remove_card()
+{
+    Card card = cards[cards.size()-1];
+    cards.pop_back();
+    return card;
+}
+
+Deck merge(const Deck& deck1, const Deck& deck2){
+    Deck res_deck(deck1.cards.size() + d2.cards.size());
+    int i = 0;
+    int j =0;
+    
+}
