@@ -77,3 +77,13 @@ Deck::Deck(int s){
     cards = copy_over_deck;
 }
 
+int Deck:find_lowest(int l, int h){
+    Card lowest = cards[l];
+    int low_index = l;
+    for(int i = l+1; i < h; i++){
+        if(lowest.is_greater(cards[i])){
+            low_index = i;
+        }
+    }
+    return low_index;
+}
