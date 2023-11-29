@@ -47,13 +47,20 @@ class Complex{
         string mag = to_string(get_mag());
         return mag + "e^" + theta + "i";
     }
-
+    Complex operator + (const Complex& c){
+        return Complex(real + c.real, imag + c.imag);
+    }
+    Complex operator - (const Complex& c){
+        return Complex(real - c.real, imag - c.imag);
+    }
 };
 
 
 int main(){
-    Complex c(1,2);
-    cout << c.get_polar() << endl;
+    Complex c2(1,2);
+    Complex c1(3,4);
+    Complex dif = c1 - c2;
+    cout << dif.get_cartesian()  << endl;
     return 0;
 
 }
