@@ -1,7 +1,10 @@
 #include <iostream>
 #include <cmath>
+#include <assert.h>
 
 using namespace std;
+
+enum Flag{POLAR};
 
 class Complex{
     double real, imag;
@@ -53,14 +56,34 @@ class Complex{
     Complex operator - (const Complex& c){
         return Complex(real - c.real, imag - c.imag);
     }
+    Complex(double m, double t, Flag){
+        mag = m;
+        theta = t;
+        polar = true;
+        calc_cart();
+    }
+    void calc_cart(){
+        assert(polar == true);
+        real = mag * cos(theta);
+        imag = mag * sin(theta);
+    }
+    Complex operator * (Complex& c){
+        if (polar == false) calc_polar();
+        if (c.polar == false) c.calc_polar();
+        return Complex(this->mag * c.mag, this->theta + c.theta, POLAR);
+    }
+    Complex operator / (Complex&c){
+        if (polar == false) calc_polar();
+        if (c.polar == false) clac_polar();
+        return Complex(this->mag * (1/c.mag), this->theta-c.theta, POLAR);
+    }
+    
 };
 
 
 int main(){
-    Complex c2(1,2);
-    Complex c1(3,4);
-    Complex dif = c1 - c2;
-    cout << dif.get_cartesian()  << endl;
+    Complex c2(1,.9);
+    cout << c2.get_theta() << endl;
     return 0;
 
 }
