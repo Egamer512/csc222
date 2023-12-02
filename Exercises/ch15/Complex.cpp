@@ -77,7 +77,15 @@ class Complex{
         if (c.polar == false) clac_polar();
         return Complex(this->mag * (1/c.mag), this->theta-c.theta, POLAR);
     }
-    
+   double abs(){
+        if (polar == false) calc_polar();
+        if (this-> mag < 0){
+            return double(mag * -1);
+        }
+        else{
+            return mag;
+        }
+   }
 };
 
 
