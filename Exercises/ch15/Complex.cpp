@@ -1,83 +1,77 @@
 #include <iostream>
 #include <cmath>
+#include "Complex.h"
 #include <assert.h>
 
 using namespace std;
 
-enum Flag{POLAR};
-
-class Complex{
-    double real, imag;
-    double mag, theta;
-    bool polar;
-
-    public:
-    Complex(){
+    
+    Complex::Complex(){
         real = 0; 
         imag = 0;
         polar = false;
     }
-    Complex(double r, double i){
+    Complex::Complex(double r, double i){
         real = r; 
         imag = i;
         polar = false;
     }
-    double get_real(){
+    double Complex::get_real(){
         return real;
     }
-    double get_imag(){
+    double Complex::get_imag(){
         return imag;
     }
-    void calc_polar(){
+    void Complex::calc_polar(){
         mag = sqrt((real*real) + (imag*imag));
         theta = atan(imag/real);
         polar = true;
     }
 
-    double get_mag(){
+    double Complex::get_mag(){
         if(polar == false) calc_polar();
         return mag;
     }
-    double get_theta(){
+    double Complex::get_theta(){
         if(polar == false) calc_polar();
         return theta;
     }
-    string get_cartesian(){
+    string Complex::get_cartesian(){
         return to_string(get_real()) + ", " + to_string(get_imag()) + " i";
     }
-    string get_polar(){
+    string Complex::get_polar(){
         string theta = to_string(get_theta());
         string mag = to_string(get_mag());
         return mag + "e^" + theta + "i";
     }
-    Complex operator + (const Complex& c){
+    Complex Complex:: operator + (const Complex& c){
         return Complex(real + c.real, imag + c.imag);
     }
-    Complex operator - (const Complex& c){
+    Complex Complex:: operator - (const Complex& c){
         return Complex(real - c.real, imag - c.imag);
     }
-    Complex(double m, double t, Flag){
+    Complex::Complex(double m, double t, Flag){
         mag = m;
         theta = t;
         polar = true;
         calc_cart();
     }
-    void calc_cart(){
+    void Complex::calc_cart(){
         assert(polar == true);
         real = mag * cos(theta);
         imag = mag * sin(theta);
     }
-    Complex operator * (Complex& c){
+    Complex Complex:: operator * (Complex& c){
         if (polar == false) calc_polar();
         if (c.polar == false) c.calc_polar();
         return Complex(this->mag * c.mag, this->theta + c.theta, POLAR);
     }
-    Complex operator / (Complex&c){
+    Complex Complex:: operator / (Complex&c){
         if (polar == false) calc_polar();
-        if (c.polar == false) clac_polar();
+        if (c.polar == false) calc_polar();
         return Complex(this->mag * (1/c.mag), this->theta-c.theta, POLAR);
     }
-   double abs(){
+   double Complex::abs(){
         if (polar == false) calc_polar();
         if (this-> mag < 0){
             return double(mag * -1);
@@ -86,12 +80,9 @@ class Complex{
             return mag;
         }
    }
-};
 
-
-int main(){
-    Complex c2(1,.9);
-    cout << c2.get_theta() << endl;
-    return 0;
-
+ostream& operator<<(ostream& os, const Complex& cnum){
+    os << cnum.mag << endl;
+    return os;
 }
+
