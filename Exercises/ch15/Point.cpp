@@ -32,5 +32,11 @@ Point Point::operator * (int val){
     return p3;
 }
 
+double Point::distance(Point& p2){
+    return double(sqrt(pow(this->x + p2.x, 2) + pow(this->y + p2.y, 2)));
+}
+
+    
 double distance(Point& p1, Point& p2){
-    return sqrt(pow(p1.x + p2.x, 2) + pow(p1.y + p2.y, 2)); 
+    return double(sqrt(pow(p1.x + p2.x, 2) + pow(p1.y + p2.y, 2))); 
+}

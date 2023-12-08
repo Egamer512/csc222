@@ -13,6 +13,7 @@ struct Point {
     Point  operator + (const Point& c);
     Point  operator - (const Point& c);
     Point operator * (int val);
+    double distance(Point& p2);
 };
 
 double distance(Point& p1, Point& p2);
