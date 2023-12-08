@@ -6,8 +6,10 @@
 using namespace std;
 
 int main(){
-    Point p(2,3);
-    cout << p.to_string << endl;    
+    Point p(3,0);
+    Point p2 = (0, 4);
+    double dist = distance(p1, p2)
+    cout << dist << endl;    
     
     return 0;
 }
